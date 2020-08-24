@@ -72,8 +72,15 @@ function attachTaskListeners() {
   });
 }
 
+function completeTask() {
+  $("li").on("click", 'li', function() {
+    document.getElementById("text").style.color="blue";
+  })
+}
+
 $(document).ready(function() {
   attachTaskListeners();
+  completeTask();
   $("form#new-task").submit(function(event) {
     event.preventDefault();
     const inputtedTaskName = $("input#new-taskName").val();
